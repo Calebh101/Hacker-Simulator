@@ -6,11 +6,11 @@
     <RootNamespace>Hacker_Simulator</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationIcon>virus2.ico</ApplicationIcon>
+    <ApplicationIcon>terminal.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="virus2.ico" />
+    <Content Include="terminal.ico" />
   </ItemGroup>
 
   <ItemGroup>

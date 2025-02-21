@@ -5,7 +5,7 @@
         string configfile = Path.GetFullPath("settings.ini");
         string ver = "0.1.1C";
         
-        int AccessPromptsShow = 0;
+        int AccessPromptsShow = 1;
         int WelcomeScreen = 1;
         int FastMode = 0;
         int HighContrast = 1;
@@ -27,7 +27,7 @@
 
         if (WelcomeScreen == 1)
         {
-            Console.Write("Hacker Simulator\nVersion " + ver + "\n\nTo change settings, open settings.ini at " + configfile + ".\n\nControls\nF11: Fullscreen\nF1: Trigger Access Denied\nF2: Trigger Access Granted\nF3: Trigger Action Complete (the program will immediately stop, so no more keys can be pressed)\nF11: Fullscreen\nF12: Autocomplete (only on no Fast Mode)\nAny key: Hack!\n\nNote: If enabled, access prompts will show randomly, so there is no need to press the trigger keys.\n\nStart hacking!");
+            Console.Write("Hacker Simulator\nVersion " + ver + "\n\nTo change settings, open settings.ini at " + configfile + ".\n\nControls\nF11: Fullscreen\nF1: Trigger Access Denied\nF2: Trigger Access Granted\nF3: Trigger Action Complete (the program will immediately stop, so no more keys can be pressed)\nF11: Fullscreen\nF12: Complete current line (only when Fast Mode is off)\nAny key: Hack!\n\nNote: If enabled, access prompts will show randomly, so there is no need to press the trigger keys.\n\nStart hacking!\n");
         }
 
         Random random = new();
