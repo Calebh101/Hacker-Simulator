@@ -1,0 +1,15 @@
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\Hacker Simulator.exe
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\settings.ini
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\Hacker Simulator.deps.json
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\Hacker Simulator.runtimeconfig.json
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\Hacker Simulator.dll
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\Hacker Simulator.pdb
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.AssemblyInfoInputs.cache
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.AssemblyInfo.cs
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.csproj.CoreCompileInputs.cache
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.dll
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\refint\Hacker Simulator.dll
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.pdb
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\Hacker Simulator.genruntimeconfig.cache
+C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\obj\Release\net8.0\ref\Hacker Simulator.dll

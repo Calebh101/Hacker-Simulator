@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\developer\\projects\\c#\\Hacker Simulator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C73BA6DF-A5EC-4C77-BC10-CAB913CE71A0}|Hacker Simulator\\Hacker Simulator.csproj|c:\\developer\\projects\\c#\\hacker simulator\\hacker simulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C73BA6DF-A5EC-4C77-BC10-CAB913CE71A0}|Hacker Simulator\\Hacker Simulator.csproj|solutionrelative:hacker simulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Program.cs",
+              "RelativeDocumentMoniker": "Hacker Simulator\\Program.cs",
+              "ToolTip": "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Program.cs",
+              "RelativeToolTip": "Hacker Simulator\\Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABQAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-21T15:45:20.233Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
