@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hacker Simulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f46f94d63a66765eacf135b7f9102a4f1a91d09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99499aab5a0f1a65b453c0fb1e664292d4c38735")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hacker Simulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hacker Simulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

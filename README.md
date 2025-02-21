@@ -26,4 +26,5 @@ Last Feature Update
 
 ## 0.1.1C
 
-- Added better program stopping
+- Added better program quitting (SIGINT handling)
+- Changed icon
