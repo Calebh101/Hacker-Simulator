@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Hacker Simulator.csproj": {}
+    "/home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/Hacker Simulator.csproj": {}
   },
   "projects": {
-    "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Hacker Simulator.csproj": {
+    "/home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/Hacker Simulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Hacker Simulator.csproj",
+        "projectUniqueName": "/home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/Hacker Simulator.csproj",
         "projectName": "Hacker Simulator",
-        "projectPath": "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Hacker Simulator.csproj",
-        "packagesPath": "C:\\Users\\caleb\\.nuget\\packages\\",
-        "outputPath": "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\obj\\",
+        "projectPath": "/home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/Hacker Simulator.csproj",
+        "packagesPath": "/home/caleb/.nuget/packages/",
+        "outputPath": "/home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\caleb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/caleb/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/caleb/.dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

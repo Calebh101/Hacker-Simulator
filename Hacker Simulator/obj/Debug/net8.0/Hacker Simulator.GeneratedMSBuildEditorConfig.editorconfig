@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hacker_Simulator
-build_property.ProjectDir = C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\
+build_property.ProjectDir = /home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

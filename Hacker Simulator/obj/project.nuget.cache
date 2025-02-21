@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hs7Kb8nxKlSkgGJCFz8llrXcJusvYD7InA0lKW9MoGWxLJ7rIVmmKHH+j7b+aXYw2Y4WQpAHn9VgYkqfVm7qTQ==",
+  "dgSpecHash": "GuXSVRvGh3U=",
   "success": true,
-  "projectFilePath": "C:\\developer\\projects\\c#\\Hacker Simulator\\Hacker Simulator\\Hacker Simulator.csproj",
+  "projectFilePath": "/home/caleb/projects/cs/Hacker-Simulator/Hacker Simulator/Hacker Simulator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

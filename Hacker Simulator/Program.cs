@@ -2,33 +2,32 @@
 {
     private static void Main(string[] args)
     {
-        string configfile = ".\\settings.ini";
-
-        string ver = "0.1.1B";
-
-        Console.Title = "Hacker Simulator V. " + ver;
-
-#if DEBUG
+        string configfile = Path.GetFullPath("settings.ini");
+        string ver = "0.1.1C";
+        
         int AccessPromptsShow = 0;
         int WelcomeScreen = 1;
         int FastMode = 0;
         int HighContrast = 1;
         int ActionCompleteShow = 0;
         int AccessPromptsRarity = 75;
-#else
-        int AccessPromptsShow = Convert.ToInt32(ReadLine(configfile, 21));
-        int WelcomeScreen = Convert.ToInt32(ReadLine(configfile, 26));
-        int FastMode = Convert.ToInt32(ReadLine(configfile, 32));
-        int HighContrast = Convert.ToInt32(ReadLine(configfile, 37));
-        int ActionCompleteShow = Convert.ToInt32(ReadLine(configfile, 42));
-        int AccessPromptsRarity = Convert.ToInt32(ReadLine(configfile, 50));
+
+#if RELEASE
+        AccessPromptsShow = Convert.ToInt32(ReadLine(configfile, 21));
+        WelcomeScreen = Convert.ToInt32(ReadLine(configfile, 26));
+        FastMode = Convert.ToInt32(ReadLine(configfile, 32));
+        HighContrast = Convert.ToInt32(ReadLine(configfile, 37));
+        ActionCompleteShow = Convert.ToInt32(ReadLine(configfile, 42));
+        AccessPromptsRarity = Convert.ToInt32(ReadLine(configfile, 50));
 #endif
 
+        Console.Title = "Hacker Simulator V. " + ver;
         Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.CancelKeyPress += new ConsoleCancelEventHandler(CancelKeyPressHandler);
 
         if (WelcomeScreen == 1)
         {
-            Console.Write("Hacker Simulator\nVersion " + ver + "\n\nTo change settings, open settings.ini\n\nControls\nF11: Fullscreen\nF1: Trigger Access Denied\nF2: Trigger Access Granted\nF3: Trigger Action Complete (the program will immediately stop, so no more keys can be pressed)\nF11: Fullscreen\nF12: Autocomplete (only on no Fast Mode)\nAny key: Hack!\n\nNote: If enabled, access prompts will show randomly, so there is no need to press the trigger keys.\n\nStart hacking!");
+            Console.Write("Hacker Simulator\nVersion " + ver + "\n\nTo change settings, open settings.ini at " + configfile + ".\n\nControls\nF11: Fullscreen\nF1: Trigger Access Denied\nF2: Trigger Access Granted\nF3: Trigger Action Complete (the program will immediately stop, so no more keys can be pressed)\nF11: Fullscreen\nF12: Autocomplete (only on no Fast Mode)\nAny key: Hack!\n\nNote: If enabled, access prompts will show randomly, so there is no need to press the trigger keys.\n\nStart hacking!");
         }
 
         Random random = new();
@@ -40,10 +39,9 @@
 
         for (; ; )
         {
-
             Thread.Sleep(1);
 
-            string[] code = { "IPAddress.Handle()", "Firewall(x + 2yh == " + random.Next(100, 999) + "x ux)", "if (firewallPort == " + random.Next(1, 65535) + " && firewallAccess == true) {\n  install vir_setup.config.exe\n} HACK.exe.ssh.php", "var access;", "gainAccess.Handle(IPAddress);", "call dir_setup.reg", "process.Process(data + '" + random.Next(1, 65535) + "')", "server.php - HACK.sub.exe", "call pause_action.exe.msi type silentInstall()", "insert data(" + random.Next(10000000, 99999999) + ");", "data = INFO.json_extractor.exe, serverinfo.json", "HACK.exe.py (execute HACK.exe.py)", "HackPort == use.IPPort(ip." + random.Next(1, 65535) + ")", "try bypass_passcode.cmd {number.Random(000001 / 999999)}; var result == passcode.json", "while ([type silentInstall()] status=(execute) + string[" + random.Next(0, 100) + "]) {\n   try forceInstall (Interaction.User[disabled] startAutomatic = true;\n} keep loop i++;", "Access.Gain(port %HackPort%, Input[serverinfo.json, passcode.json]);", "fun grantAccess();", "convert passcode.json >> passcode.log", "start(force);", "try f(x)=mx+b, x == %HackPort%, b == passcode.log, m == %DATA_RATE%", "DATA_RATE == " + random.Next(0, 100) + ";", "var victimLocation, hackerLocation;" };
+            string[] code = ["IPAddress.Handle()", "Firewall(x + 2yh == " + random.Next(100, 999) + "x ux)", "if (firewallPort == " + random.Next(1, 65535) + " && firewallAccess == true) {\n  install vir_setup.config.exe\n} HACK.exe.ssh.php", "var access;", "gainAccess.Handle(IPAddress);", "call dir_setup.reg", "process.Process(data + '" + random.Next(1, 65535) + "')", "server.php - HACK.sub.exe", "call pause_action.exe.msi type silentInstall()", "insert data(" + random.Next(10000000, 99999999) + ");", "data = INFO.json_extractor.exe, serverinfo.json", "HACK.exe.py (execute HACK.exe.py)", "HackPort == use.IPPort(ip." + random.Next(1, 65535) + ")", "try bypass_passcode.cmd {number.Random(000001 / 999999)}; var result == passcode.json", "while ([type silentInstall()] status=(execute) + string[" + random.Next(0, 100) + "]) {\n   try forceInstall (Interaction.User[disabled] startAutomatic = true;\n} keep loop i++;", "Access.Gain(port %HackPort%, Input[serverinfo.json, passcode.json]);", "fun grantAccess();", "convert passcode.json >> passcode.log", "start(force);", "try f(x)=mx+b, x == %HackPort%, b == passcode.log, m == %DATA_RATE%", "DATA_RATE == " + random.Next(0, 100) + ";", "var victimLocation, hackerLocation;"];
 
             string delim = "blank";
             string CurrentLine = "blank";
@@ -149,7 +147,7 @@
     {
         try
         {
-            string line = File.ReadLines(FilePath).ElementAtOrDefault(LineNumber - 1);
+            string line = File.ReadLines(FilePath).ElementAtOrDefault(LineNumber - 1)!;
             if (string.IsNullOrEmpty(line))
             {
                 throw new Exception("The setting at line '" + LineNumber + "' was empty.");
@@ -164,5 +162,12 @@
         {
             throw new Exception($"An error occurred: " + ex.Message);
         }
+    }
+
+    static void CancelKeyPressHandler(object? sender, ConsoleCancelEventArgs e)
+    {
+        e.Cancel = true;
+        Console.WriteLine("\nQuitting HACK.exe...");
+        Environment.Exit(0);
     }
 }
