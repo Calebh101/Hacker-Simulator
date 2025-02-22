@@ -28,4 +28,5 @@ Last Feature Update
 
 - Added better program quitting (SIGINT handling)
 - Changed icon
+- Added settings validation
 - Other general updates

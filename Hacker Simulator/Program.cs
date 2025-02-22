@@ -1,13 +1,13 @@
 ﻿internal class Program
 {
     static bool debug = false;
-    static readonly int AccessPromptsShow = 1;
-    static readonly int WelcomeScreen = 1;
-    static readonly int FastMode = 0;
-    static readonly int HighContrast = 1;
-    static readonly int ActionCompleteShow = 0;
-    static readonly int AccessPromptsRarity = 75;
-    static readonly int idLength = 12;
+    static int AccessPromptsShow = 1;
+    static int WelcomeScreen = 1;
+    static int FastMode = 0;
+    static int HighContrast = 1;
+    static int ActionCompleteShow = 0;
+    static int AccessPromptsRarity = 75;
+    static int idLength = 12;
 
     static void Error(string message) {
         Console.ForegroundColor = ConsoleColor.Red;
