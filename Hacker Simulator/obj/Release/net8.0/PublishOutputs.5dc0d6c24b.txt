@@ -1,6 +1,0 @@
-C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\publish\Hacker Simulator.exe
-C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\publish\settings.ini
-C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\publish\Hacker Simulator.dll
-C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\publish\Hacker Simulator.deps.json
-C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\publish\Hacker Simulator.runtimeconfig.json
-C:\developer\projects\c#\Hacker Simulator\Hacker Simulator\bin\Release\net8.0\publish\Hacker Simulator.pdb
