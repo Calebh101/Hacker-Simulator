@@ -59,7 +59,7 @@ internal class Program
     private static void Main(string[] args)
     {
         string configfile = Path.GetFullPath("settings.ini");
-        string ver = "0.1.1C";
+        string ver = "0.1.2A";
         Console.WriteLine("Initiating program...");
         if (Array.Exists(args, arg => arg == "--debug"))
         {

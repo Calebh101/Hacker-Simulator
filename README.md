@@ -30,3 +30,7 @@ Last Feature Update
 - Changed icon
 - Added settings validation
 - Other general updates
+
+## 0.1.2A
+
+- Rewrote settings.ini, making it more reliable
