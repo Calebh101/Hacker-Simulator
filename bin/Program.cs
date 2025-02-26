@@ -1,9 +1,12 @@
-﻿internal class Program
+﻿using System;
+using Microsoft.Extensions.Configuration;
+
+internal class Program
 {
     static bool debug = false;
     static int AccessPromptsShow = 1;
     static int WelcomeScreen = 1;
-    static int FastMode = 0;
+    static int Speed = 3;
     static int HighContrast = 1;
     static int ActionCompleteShow = 0;
     static int AccessPromptsRarity = 75;
@@ -66,15 +69,20 @@
 
         Console.WriteLine("Finding settings file at " + configfile);
         if (CheckFile(configfile)) {
-            #if RELEASE
-                AccessPromptsShow = Convert.ToInt32(ReadLine(configfile, 21));
-                WelcomeScreen = Convert.ToInt32(ReadLine(configfile, 26));
-                FastMode = Convert.ToInt32(ReadLine(configfile, 32));
-                HighContrast = Convert.ToInt32(ReadLine(configfile, 37));
-                ActionCompleteShow = Convert.ToInt32(ReadLine(configfile, 42));
-                AccessPromptsRarity = Convert.ToInt32(ReadLine(configfile, 50));
-                idLength = Convert.ToInt32(ReadLine(configfile, 54));
-            #endif
+            //#if RELEASE
+                var data = new ConfigurationBuilder()
+                    .SetBasePath(AppContext.BaseDirectory)
+                    .AddIniFile(configfile, optional: false, reloadOnChange: true)
+                    .Build();
+
+                AccessPromptsShow = Convert.ToInt32(data["General:AccessPromptsShow"]);
+                WelcomeScreen = Convert.ToInt32(data["General:WelcomeScreen"]);
+                Speed = Convert.ToInt32(data["General:Speed"]);
+                HighContrast = Convert.ToInt32(data["General:HighContrast"]);
+                ActionCompleteShow = Convert.ToInt32(data["General:ActionCompleteShow"]);
+                AccessPromptsRarity = Convert.ToInt32(data["Advanced:AccessPromptsRarity"]);
+                idLength = Convert.ToInt32(data["Advanced:idLength"]);
+            //#endif
         } else {
             Warn("WARNING: File " + configfile + " does not exist in the current location. (Did you forget the settings file?)");
         }
@@ -86,8 +94,8 @@
         CheckBoolean(WelcomeScreen, "General.WelcomeScreen", false);
         CheckBoolean(HighContrast, "General.HighContrast", false);
         CheckBoolean(ActionCompleteShow, "General.ActionCompleteShow", false);
-        CheckBoolean(FastMode, "General.FastMode", true);
 
+        CheckInt(Speed, "General.Speed", false);
         CheckInt(AccessPromptsRarity, "Advanced.AccessPromptsRarity", false);
         CheckInt(idLength, "Advanced.idLength", false);
 
@@ -139,32 +147,35 @@
                 "deviceId = " + string.Join(":", Enumerable.Range(0, 4).Select(i => GenerateId()).ToArray()),
             ];
 
-            string delim = "blank";
-            string CurrentLine = "blank";
+            string delim = "";
+            string CurrentLine = "";
             int action = 0;
             int listenForKeyPress = 1;
 
-            if (FastMode == 2)
+            if (Speed >= 3)
             {
-                CurrentLine = "\n" + code[random.Next(0, code.Length)] + "\n" + code[random.Next(0, code.Length)] + "\n" + code[random.Next(0, code.Length)];
+                CurrentLine = string.Join("\n", Enumerable.Repeat(0, Speed).Select(_ => code[random.Next(code.Length)])); // get 3 lines
             }
             else
             {
-                CurrentLine = "\n" + code[random.Next(0, code.Length)];
+                CurrentLine = "\n" + code[random.Next(0, code.Length)]; // get 1 line
             }
 
-            if (FastMode == 0)
+            if (Speed == 1)
             {
-                delim = " ";
+                delim = " "; // split by spaces
+            }
+            else if (Speed == 0)
+            {
+                delim = ""; // no value
             }
             else
             {
-                delim = string.Empty;
+                delim = string.Empty; // no value
             }
 
             action = random.Next(0, AccessPromptsRarity);
-
-            string[] words = CurrentLine.Split(delim, StringSplitOptions.RemoveEmptyEntries);
+            string[] words = Speed == 0 ? CurrentLine.Select(c => c.ToString()).ToArray() : CurrentLine.Split(delim, StringSplitOptions.RemoveEmptyEntries); // if the speed is 0, then split by each character; otherwise split by the delimiter
 
             for (int i = 0; i < words.Length; i++)
             {
@@ -194,7 +205,7 @@
                             while (true) {/**/}
                         }
                     }
-                    else if (keyInfo.Key == ConsoleKey.F12 && FastMode == 0)
+                    else if (keyInfo.Key == ConsoleKey.F12 && Speed == 0)
                     {
                         listenForKeyPress = 0;
 
